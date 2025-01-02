@@ -31,10 +31,17 @@ end
 
 def intake
   pp "What's the title of the movie you want to add?"
+  title = gets.chomp
   pp "What year did it come out?"
+  year = gets.chomp.to_int
   pp "Who directed it?"
+  director = gets.chomp
   pp "What format do you have it in?"
+  format = gets.chomp
   pp "Is it owned by you (Self) or someone else?"
+  owner = gets.chomp
+  pp "You've added a movie to your collection!"
+end
 
 def collection_list
   pp "Here's the movies you've got right now"
