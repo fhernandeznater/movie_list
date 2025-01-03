@@ -40,10 +40,12 @@ def intake
   director = gets.chomp
   puts "What format do you have it in?"
   format = gets.chomp
-  puts "Is it owned by you (Self) or someone else?"
+  puts "Is it owned by you (Self) or someone else (the library, on loan from someone else)?"
   owner = gets.chomp
+  puts "From 0-5, what's your rating?"
+  rating = gets.chomp.to_i
   puts "You've added a movie to your collection!"
-  @collection << Movie.new(title, year, director, format, owner)
+  @collection << Movie.new(title, year, director, format, owner, rating)
 end
 
 def collection_list
