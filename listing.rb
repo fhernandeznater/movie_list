@@ -9,9 +9,9 @@ def run
   loop do
     puts "\n"
     puts "Let's browse your movie collection!"
-    puts "To add a movie, type 1"
-    puts "To see all the movies you have, sorted by year, type 2"
-    puts "To exit, type 3"
+    puts "1) Add a movie"
+    puts "2) See all the movies you have"
+    puts "3) Exit"
     puts "Which would you like to do?"
     selection = gets.chomp.to_i
     puts "\n"
