@@ -9,7 +9,7 @@ class Movie
     @owner = owner
   end
 
-  def movie_information_string
-    pp "#{title} (#{year}), directed by #{director}. #{format} owned by #{owner}"
+  def to_s
+    "#{title} (#{year}), directed by #{director}. #{format} owned by #{owner}"
   end
 end

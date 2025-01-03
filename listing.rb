@@ -12,40 +12,44 @@ def run
     puts "To add a movie, type 1"
     puts "To see all the movies you have, type 2"
     puts "To exit, type 3"
-    pp "Which would you like to do?"
+    puts "Which would you like to do?"
     selection = gets.chomp.to_i
-    puts "/n"
-    case option
+    puts "\n"
+    case selection
     when 1
       intake
     when 2
       collection_list
     when 3
-      pp "Enjoy watching movies!"
+      puts "Enjoy watching movies!"
       break
     else
-      pp "That's not a valid option."
+      puts "That's not a valid option."
     end
   end
 end
 
+private
+
 def intake
-  pp "What's the title of the movie you want to add?"
+  puts "What's the title of the movie you want to add?"
   title = gets.chomp
-  pp "What year did it come out?"
-  year = gets.chomp.to_int
-  pp "Who directed it?"
+  puts "What year did it come out?"
+  year = gets.chomp.to_i
+  puts "Who directed it?"
   director = gets.chomp
-  pp "What format do you have it in?"
+  puts "What format do you have it in?"
   format = gets.chomp
-  pp "Is it owned by you (Self) or someone else?"
+  puts "Is it owned by you (Self) or someone else?"
   owner = gets.chomp
-  pp "You've added a movie to your collection!"
+  puts "You've added a movie to your collection!"
+  @collection << Movie.new(title, year, director, format, owner)
 end
 
 def collection_list
-  pp "Here's the movies you've got right now"
+  puts "Here's the movies you've got right now:"
   @collection.each do |film|
-    pp film.movie_information_string
+    puts film
   end
+end
 end
