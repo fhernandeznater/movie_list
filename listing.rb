@@ -10,7 +10,7 @@ def run
     puts "\n"
     puts "Let's browse your movie collection!"
     puts "To add a movie, type 1"
-    puts "To see all the movies you have, type 2"
+    puts "To see all the movies you have, sorted by year, type 2"
     puts "To exit, type 3"
     puts "Which would you like to do?"
     selection = gets.chomp.to_i
@@ -47,9 +47,15 @@ def intake
 end
 
 def collection_list
+  @collection = @collection.sort_by {|film| film.year}
   puts "Here's the movies you've got right now:"
   @collection.each do |film|
     puts film
   end
 end
+
+def year_sort
+
+end
+
 end
