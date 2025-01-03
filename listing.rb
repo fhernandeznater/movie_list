@@ -56,8 +56,4 @@ def collection_list
   end
 end
 
-def year_sort
-
-end
-
 end
