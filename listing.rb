@@ -49,7 +49,21 @@ def intake
 end
 
 def collection_list
-  @collection = @collection.sort_by {|film| film.year}
+  puts "How would you like to sort this collection?"
+  puts "1) Sort by year"
+  puts "2) Sort by rating"
+  puts "Which would you like to do?"
+  sort_select = gets.chomp.to_i
+  puts "\n"
+    case sort_select
+    when 1
+      @collection = @collection.sort_by {|film| film.year}
+      puts "Sorted by year."
+    when 2
+      @collection = @collection.sort_by {|film| film.rating}
+    else
+      puts "That's not a valid option."
+    end
   puts "Here's the movies you've got right now:"
   @collection.each do |film|
     puts film
